@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 90vw;
+}
+
+.card {
+  flex: 0 0 7.5%;
+  border: 2px rgb(0, 0, 0) solid;
+  height: 8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 1px;
+  box-sizing: border-box;
+}
+
+.card img {
+  width: 50%;
+  align-self: center;
+}
+
+.card p {
+  margin: 2px;
+  font-size: 12px;
+}
+
+#cards p:nth-child(3) {
+  transform: rotate(180deg);
+}
+
+.back {
+  /* background: url('https://assets-lighthouse.alphacamp.co/uploads/image/file/9222/ExportedContentImage_00.png'); */
+  /* background-size: cover; */
+  content:url('https://assets-lighthouse.alphacamp.co/uploads/image/file/9222/ExportedContentImage_00.png');
+}
+
+.paired {
+  background-color: #dae0e3;
+}
+
+#header {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 85%;
+}
+
+#header .title {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#header .title img {
+  max-width: 3em;
+}
+
+#header .title h2 {
+  padding-left: 0.5em;
+}
+
+#header .score {
+  margin: 0;
+  color: #6c90ac;
+}
+
+#header .tried {
+  margin-top: 0;
+}
+
+.wrong {
+  animation-name: wrongAnimation;
+  animation-duration: 0.25s;
+  animation-iteration-count: 2;
+}
+
+@keyframes wrongAnimation {
+  0% {
+    transform:scale(1);
+    transform:rotate(0deg);
+  }
+
+  100% {
+    border: 1px solid #ffd54f;
+    transform:scale(1.05);
+    transform:rotate(2deg);
+  }
+}
+
+/** Game finished **/
+.completed {
+  position: absolute;
+  z-index: 999;
+  top: 30vh;
+  background-color: RGBA(232, 246, 254, 0.8);
+  width: 100vw;
+  padding: 50px 0;
+}
+
+.completed>p {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+
+.completed>p:first-child {
+  font-size: 3em;
+  font-weight: 700;
+  color: #758d9a;
+}
